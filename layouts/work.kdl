@@ -1,0 +1,33 @@
+layout {
+	default_tab_template name="new-tab" {
+		pane size=1 borderless=true {
+			plugin location="zellij:tab-bar"
+		}
+		children
+		pane size=2 borderless=true {
+			plugin location="zellij:status-bar"
+		}
+	}
+	pane_template name="pingboard-pane" cwd="work/pingboard"
+	pane_template name="sigma-pane" cwd="work/pingboard-sigma"
+	tab name="pingboard" focus=true {
+		pane stacked=true  {
+			pingboard-pane name="primary" command="hx"
+			pingboard-pane name="lazygit" command="lazygit"
+			pingboard-pane name="console"
+		}
+	}
+	tab name="sigma"  {
+		pane stacked=true {
+			sigma-pane name="primary" command="hx"
+			sigma-pane name="lazygit" command="lazygit" cwd="work/pingboard-sigma"
+			sigma-pane name="console"
+		}
+	}
+	tab name="pingboard-server" {
+		pingboard-pane name="primary"
+	}
+	tab name="sigma-server" {
+		pane name="primary"
+	}
+}
