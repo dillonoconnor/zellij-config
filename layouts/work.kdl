@@ -20,7 +20,7 @@ layout {
 	tab name="sigma"  {
 		pane stacked=true {
 			sigma-pane name="primary" command="hx"
-			sigma-pane name="lazygit" command="lazygit" cwd="work/pingboard-sigma"
+			sigma-pane name="lazygit" command="lazygit"
 			sigma-pane name="console"
 		}
 	}
